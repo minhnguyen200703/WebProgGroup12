@@ -102,7 +102,7 @@
 </head>
 <body>
     <header>
-        <a href="index.php" class="back_btn" id="vendor_back_btn"><i class="fa-solid fa-chevron-left"></i>Back</a>
+        <a href="./www/index.php" class="back_btn" id="vendor_back_btn"><i class="fa-solid fa-chevron-left"></i>Back</a>
     </header>
     <main>
         <div class="registration vendor">
