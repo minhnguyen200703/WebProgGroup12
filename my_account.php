@@ -50,10 +50,11 @@
         }
     };
 ?>
-    
+
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -62,17 +63,20 @@
 
     <!-- Font families -->
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Hachi+Maru+Pop&family=Hubballi&family=Inter:wght@300;400;500;600;700;800&family=Kalam:wght@700&family=Montserrat:wght@254&family=Open+Sans:wght@326;379&family=Permanent+Marker&family=Poppins:wght@100&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,700&family=Rubik+Glitch&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Hachi+Maru+Pop&family=Hubballi&family=Inter:wght@300;400;500;600;700;800&family=Kalam:wght@700&family=Montserrat:wght@254&family=Open+Sans:wght@326;379&family=Permanent+Marker&family=Poppins:wght@100&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,700&family=Rubik+Glitch&display=swap');
     </style>
 
     <!-- Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+        integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/base.css">
     <!-- <link rel="stylesheet" href="assets/css/registration_pages.css"> -->
     <link rel="stylesheet" href="assets/css/biography.css">
 </head>
+
 <body>
     <!-- Header section -->
     <header>
@@ -123,7 +127,7 @@
                     <h2 class="biography_content__username">Hi <?php echo ucfirst($_SESSION['user']['username']) ?></h2>
 
                     <ul class="biography_content__container">
-                            <?php 
+                        <?php 
                                 function display_biography_item($label, $info) {
                                     if ($label == "Role") {
                                         switch ($info) {
@@ -163,22 +167,23 @@
                                         break;
                                 }
                             ?>
-                        </ul>
+                    </ul>
 
                 </div>
                 <div class="biography_content_new">
-                     <div class="biography_content__icon">
+                    <div class="biography_content__icon">
                         <i class="fa-solid fa-xmark cancel_edit_btn"></i>
                     </div>
 
                     <form action="" method="post" enctype="multipart/form-data" class="change_profile_form">
                         <div class="form_field avatar">
-                            <label for="new_avatar" class="edit_btn form_field__label"> 
+                            <label for="new_avatar" class="edit_btn form_field__label">
                                 <img src="assets/img/mock_avt2.png" alt="" class="avt_block">
                                 <i class="fa-solid fa-camera camera_icon"></i>
                             </label>
-                            <input type="file" name="new_avatar" accept="image/*" id="new_avatar" onchange="loadFile(event)" style="display: none"> 
-                            <span class="form_field__message"> 
+                            <input type="file" name="new_avatar" accept="image/*" id="new_avatar"
+                                onchange="loadFile(event)" style="display: none">
+                            <span class="form_field__message">
                                 <?php
                                     // echo isset($avt_err) ? $avt_err : '';
                                 ?>
@@ -189,109 +194,131 @@
                             + các input field sẽ hthị, còn các thtin đã hthị ban nãy sẽ bị display: none
                             + các input field sẽ có placeholder = php(echo $_SESSION['user'][...])-->
                         <div class="form_field">
-                            <input type="submit" name="edit_profile_btn" id="edit_profile_btn" value="Update avatar" class="btn-hover color-9">
+                            <input type="submit" name="edit_profile_btn" id="edit_profile_btn" value="Update avatar"
+                                class="btn-hover color-9">
                         </div>
                     </form>
-                    
+
                 </div>
             </div>
-        </section>        
+        </section>
     </main>
-    
-    
+
+    <footer>
+        <nav class="nav_footer">
+            <ul class="nav_pc_container">
+                <li class="nav_pc_item">
+                    <a href="./about.html" class="nav_pc_item__link">About</a>
+                </li>
+                <li class="nav_pc_item">
+                    <a href="./privacy_policies.html" class="nav_pc_item__link">Policies</a>
+                </li>
+                <li class="nav_pc_item">
+                    <a href="#" class="nav_pc_item__link">Help</a>
+                </li>
+                <li class="nav_pc_item">
+                    <a href="#" class="nav_pc_item__link">Contact</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="group_name">
+            <p>©2022 Group 7</p>
+        </div>
+    </footer>
+
     <!-- JS CODE -->
     <!-- Upload image script -->
     <script src="./assets/js/preview.js"></script>
 
     <script>
-        var changeProfileForm = document.querySelector('.change_profile_form');
-        var oldBiography = document.querySelector('.biography_content_old');
-        var editBtn = document.querySelector('.edit_profile_btn');
-        var cancelBtn = document.querySelector('.cancel_edit_btn');
+    var changeProfileForm = document.querySelector('.change_profile_form');
+    var oldBiography = document.querySelector('.biography_content_old');
+    var editBtn = document.querySelector('.edit_profile_btn');
+    var cancelBtn = document.querySelector('.cancel_edit_btn');
 
-        function enableEdit() {
-            changeProfileForm.classList.remove('hide');
-            oldBiography.classList.add('hide');
-            cancelBtn.classList.remove('hide');
-        }
+    function enableEdit() {
+        changeProfileForm.classList.remove('hide');
+        oldBiography.classList.add('hide');
+        cancelBtn.classList.remove('hide');
+    }
 
-        function disableEdit() {
-            changeProfileForm.classList.add('hide');
-            oldBiography.classList.remove('hide');
-            cancelBtn.classList.add('hide');
-        }
+    function disableEdit() {
+        changeProfileForm.classList.add('hide');
+        oldBiography.classList.remove('hide');
+        cancelBtn.classList.add('hide');
+    }
 
-        editBtn.addEventListener('click', enableEdit);
-        cancelBtn.addEventListener('click', disableEdit);
-        disableEdit();
+    editBtn.addEventListener('click', enableEdit);
+    cancelBtn.addEventListener('click', disableEdit);
+    disableEdit();
     </script>
-    
+
 
     <!-- JS CODE -->
     <script src="./assets/js/preview.js"></script>'
     <script>
-        var avatarElement = document.querySelector('.nav_pc_item__avt');
-        var accountSetting = document.querySelector('.account-setting-container');
+    var avatarElement = document.querySelector('.nav_pc_item__avt');
+    var accountSetting = document.querySelector('.account-setting-container');
 
-        avatarElement.onclick = function() {
-            if (accountSetting.classList.contains('hide')) {
-                accountSetting.classList.remove('hide');
-            } else {
-                accountSetting.classList.add('hide');
-            }
+    avatarElement.onclick = function() {
+        if (accountSetting.classList.contains('hide')) {
+            accountSetting.classList.remove('hide');
+        } else {
+            accountSetting.classList.add('hide');
+        }
     }
-    </script>   
+    </script>
 
     <!-- Validate Client side -->
     <script src='./assets/js/validator.js'></script>
     <script>
-        var realName = document.getElementById('new_real_name');
-        var avatar = document.getElementById('new_avatar');
-        var gender = document.getElementById('new_gender');
-        var nationality = document.getElementById('new_nationality');
-        var editProfileButton = document.getElementById('edit_profile_btn');
-        var formFieldArr = document.querySelectorAll('.form_field');
+    var realName = document.getElementById('new_real_name');
+    var avatar = document.getElementById('new_avatar');
+    var gender = document.getElementById('new_gender');
+    var nationality = document.getElementById('new_nationality');
+    var editProfileButton = document.getElementById('edit_profile_btn');
+    var formFieldArr = document.querySelectorAll('.form_field');
 
-        function formValidation() {
-            let isValidName = otherFieldValidation(realName);
-            let isValidGender = checkSelect(gender);
-            let isValidNationality = checkSelect(nationality);
-            let isFileUploaded = false;
+    function formValidation() {
+        let isValidName = otherFieldValidation(realName);
+        let isValidGender = checkSelect(gender);
+        let isValidNationality = checkSelect(nationality);
+        let isFileUploaded = false;
 
-            if (!checkFileUpload(avatar)) {
-                showError(avatar, 'Not uploaded')
-            } else {
-                isFileUploaded = true;
-                showSuccess(avatar)
-            }
-            
-            if (isValidName || isValidGender || isValidName || isValidNationality || isFileUploaded) {
-                return true
-            } 
-            return false
+        if (!checkFileUpload(avatar)) {
+            showError(avatar, 'Not uploaded')
+        } else {
+            isFileUploaded = true;
+            showSuccess(avatar)
         }
 
-        // When click on submit button
-        editProfileButton.addEventListener("click", function(event){
-            let isValid =  formValidation()
-            if (!isValid) {
-                formFieldArr.forEach(formField => {
-                    formField.style['padding-top'] = "10px";
-                });
-                event.preventDefault()
-            }
-        }); 
-
-        cancelBtn.onclick = function() {
-            changeProfileForm.reset();
-            let formFieldMsgArr = document.querySelectorAll('.form_field__message');
-            formFieldMsgArr.forEach(formFieldMsg => {
-                formFieldMsg.innerText = "";
-            })
+        if (isValidName || isValidGender || isValidName || isValidNationality || isFileUploaded) {
+            return true
         }
+        return false
+    }
 
+    // When click on submit button
+    editProfileButton.addEventListener("click", function(event) {
+        let isValid = formValidation()
+        if (!isValid) {
+            formFieldArr.forEach(formField => {
+                formField.style['padding-top'] = "10px";
+            });
+            event.preventDefault()
+        }
+    });
+
+    cancelBtn.onclick = function() {
+        changeProfileForm.reset();
+        let formFieldMsgArr = document.querySelectorAll('.form_field__message');
+        formFieldMsgArr.forEach(formFieldMsg => {
+            formFieldMsg.innerText = "";
+        })
+    }
     </script>
 </body>
+
 </html>
 <?php 
     ob_end_flush();

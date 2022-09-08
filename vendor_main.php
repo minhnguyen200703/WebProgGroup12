@@ -89,8 +89,25 @@
     </main>
 
     <footer>
-
-
+        <nav class="nav_footer">
+            <ul class="nav_pc_container">
+                <li class="nav_pc_item">
+                    <a href="./about.html" class="nav_pc_item__link">About</a>
+                </li>
+                <li class="nav_pc_item">
+                    <a href="./privacy_policies.html" class="nav_pc_item__link">Policies</a>
+                </li>
+                <li class="nav_pc_item">
+                    <a href="#" class="nav_pc_item__link">Help</a>
+                </li>
+                <li class="nav_pc_item">
+                    <a href="#" class="nav_pc_item__link">Contact</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="group_name">
+            <p>©2022 Group 7</p>
+        </div>
     </footer>
 
     <script>
@@ -107,27 +124,7 @@
         }
     }
     </script>
-    <footer>
-        <nav class="nav_footer">
-            <ul class="nav_pc_container">
-                <li class="nav_pc_item">
-                    <a href="#" class="nav_pc_item__link">About</a>
-                </li>
-                <li class="nav_pc_item">
-                    <a href="#" class="nav_pc_item__link">Policies</a>
-                </li>
-                <li class="nav_pc_item">
-                    <a href="#" class="nav_pc_item__link">Help</a>
-                </li>
-                <li class="nav_pc_item">
-                    <a href="#" class="nav_pc_item__link">Contact</a>
-                </li>
-            </ul>
-        </nav>
-        <div class="group_name">
-            <p>©2022 Group 7</p>
-        </div>
-    </footer>
+
 </body>
 
 </html>
