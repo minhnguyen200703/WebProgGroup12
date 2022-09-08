@@ -34,6 +34,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -42,17 +43,20 @@
 
     <!-- Font families -->
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Hachi+Maru+Pop&family=Hubballi&family=Inter:wght@300;400;500;600;700;800&family=Kalam:wght@700&family=Montserrat:wght@254&family=Open+Sans:wght@326;379&family=Permanent+Marker&family=Poppins:wght@100&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,700&family=Rubik+Glitch&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Hachi+Maru+Pop&family=Hubballi&family=Inter:wght@300;400;500;600;700;800&family=Kalam:wght@700&family=Montserrat:wght@254&family=Open+Sans:wght@326;379&family=Permanent+Marker&family=Poppins:wght@100&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,700&family=Rubik+Glitch&display=swap');
     </style>
 
     <!-- Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+        integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <!-- CSS -->
     <link rel="stylesheet" href="./assets/css/base.css">
     <link rel="stylesheet" href="./assets/css/main.css">
-    <link rel="stylesheet" href="./assets/css/cus.css">
+    <link rel="stylesheet" href="./assets/css/shipper.css">
 </head>
+
 <body>
     <!-- Header section -->
     <header>
@@ -65,12 +69,6 @@
         <!-- Nav bar -->
         <nav>
             <ul class="nav_pc_container">
-                <li class="nav_pc_item">
-                    <a href="#" class="nav_pc_item__link">About</a>
-                </li>
-                <li class="nav_pc_item">
-                    <a href="#" class="nav_pc_item__link">Policies</a>
-                </li>
                 <li class="nav_pc_item">
                     <img src="<?php echo $_SESSION['user']['avatar']?>" alt="" class="nav_pc_item__avt">
                     <ul class="account-setting-container hide">
@@ -93,23 +91,23 @@
 
     </header>
 
-        <!-- Main section -->
+    <!-- Main section -->
     <main>
-            <!-- Main header -->
+        <!-- Main header -->
         <div class="main_header">
             <!-- Back to cus_main -->
             <div class="shipper_back_to_main">
-                <a href="./shipper_main.php" class="shipper_back_to_main__btn"><i class="fa-solid fa-chevron-left"></i>Back</a>
+                <a href="./shipper_main.php" class="shipper_back_to_main__btn back_btn" id="shipper_back_btn">Back</a>
             </div>
         </div>
 
-            <!-- Buyer personal inforamtion -->
+        <!-- Buyer personal inforamtion -->
         <div class="buyer_detail_container">
             Orderer: <span><?php echo $user ?></span> <br>
             Address: <span><?php echo $address ?> </span> <br>
         </div>
 
-            <!-- Order detail -->
+        <!-- Order detail -->
         <div class="order_detail_container">
             <table border=1px class="cus_cart_list">
                 <thead class="order_head">
@@ -120,7 +118,7 @@
                     <th>Quantity</th>
                 </thead>
 
-                <tbody class="order_body">  
+                <tbody class="order_body">
                     <?php
                         $total_price = 0;
                         foreach ($order as $key => $product) {
@@ -145,7 +143,7 @@
                                 ;
                             };
                         ?>
-                    </tbody>
+                </tbody>
             </table>
         </div>
 
@@ -159,55 +157,75 @@
                 Deliver
             </button>
 
-            <button class="canceled" >
+            <button class="canceled">
                 Cancel
             </button>
         </div>
 
-    
+
     </main>
-    
+
 
     <script>
+    // Open the Accouunt setting subnav bar
+    var avatarElement = document.querySelector('.nav_pc_item__avt');
+    var accountSetting = document.querySelector('.account-setting-container');
 
-            // Open the Accouunt setting subnav bar
-        var avatarElement = document.querySelector('.nav_pc_item__avt');
-        var accountSetting = document.querySelector('.account-setting-container');
-
-        avatarElement.onclick = function() {
-            if (accountSetting.classList.contains('hide')) {
-                accountSetting.classList.remove('hide');
-            } else {
-                accountSetting.classList.add('hide');
-            }
+    avatarElement.onclick = function() {
+        if (accountSetting.classList.contains('hide')) {
+            accountSetting.classList.remove('hide');
+        } else {
+            accountSetting.classList.add('hide');
+        }
     }
-    </script> 
+    </script>
 
     <script>
-        // Get current url function
-        function getCurrentURL () {
-            return window.location.href
-        }
-        
-        // Change status function
-        function changeStatus(status) {
-            window.location.href = url.concat("&", "update_status=", status)
-        }
-        
-        var deliver = document.querySelector('.delivered')
-        var cancel = document.querySelector('.canceled')
-        const url = getCurrentURL()
+    // Get current url function
+    function getCurrentURL() {
+        return window.location.href
+    }
 
-        // Run the change status function as click on delivered button
-        deliver.addEventListener('click', function () {
-            changeStatus('delivered')
-        })
+    // Change status function
+    function changeStatus(status) {
+        window.location.href = url.concat("&", "update_status=", status)
+    }
 
-        // Run the change status function as click on canceled button
-        cancel.addEventListener('click', function () {
-            changeStatus('canceled')
-        })
+    var deliver = document.querySelector('.delivered')
+    var cancel = document.querySelector('.canceled')
+    const url = getCurrentURL()
 
+    // Run the change status function as click on delivered button
+    deliver.addEventListener('click', function() {
+        changeStatus('delivered')
+    })
+
+    // Run the change status function as click on canceled button
+    cancel.addEventListener('click', function() {
+        changeStatus('canceled')
+    })
     </script>
+    <footer>
+        <nav class="nav_footer">
+            <ul class="nav_pc_container">
+                <li class="nav_pc_item">
+                    <a href="#" class="nav_pc_item__link">About</a>
+                </li>
+                <li class="nav_pc_item">
+                    <a href="#" class="nav_pc_item__link">Policies</a>
+                </li>
+                <li class="nav_pc_item">
+                    <a href="#" class="nav_pc_item__link">Help</a>
+                </li>
+                <li class="nav_pc_item">
+                    <a href="#" class="nav_pc_item__link">Contact</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="group_name">
+            <p>©2022 Group 7</p>
+        </div>
+    </footer>
 </body>
+
 </html>

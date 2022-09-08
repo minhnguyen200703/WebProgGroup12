@@ -50,6 +50,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -57,16 +58,19 @@
     <title>Lazada</title>
     <!-- Font families -->
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Hachi+Maru+Pop&family=Hubballi&family=Inter:wght@300;400;500;600;700;800&family=Kalam:wght@700&family=Montserrat:wght@254&family=Open+Sans:wght@326;379&family=Permanent+Marker&family=Poppins:wght@100&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,700&family=Rubik+Glitch&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Hachi+Maru+Pop&family=Hubballi&family=Inter:wght@300;400;500;600;700;800&family=Kalam:wght@700&family=Montserrat:wght@254&family=Open+Sans:wght@326;379&family=Permanent+Marker&family=Poppins:wght@100&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,700&family=Rubik+Glitch&display=swap');
     </style>
 
     <!-- Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+        integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
+
     <!-- CSS -->
     <link rel="stylesheet" href="../assets/css/base.css">
     <link rel="stylesheet" href="../assets/css/main.css">
 </head>
+
 <body>
     <!-- Header section -->
     <header>
@@ -82,7 +86,7 @@
                 <li class="nav_pc_item">
                     <a href="../privacy_policies.html" class="nav_pc_item__link">Policies</a>
                 </li>
-                
+
             </ul>
         </nav>
     </header>
@@ -94,31 +98,33 @@
                 <p class="static_txt">We are <span class="dynamic_txt"></span><span class="cursor">&nbsp;</span></p>
                 <p>The best e-commerce platform in Southest Asia</p>
 
-                <form action = "" method="POST" id="login_form">
-                        <div class="login_form_field">
-                            <label for="login_username" class="login_form_field__label">Username</label>
-                            <input type="text"  name="login_username" id="login_username" class="login_form_field__input" placeholder="Enter username"/>
-                        </div>
+                <form action="" method="POST" id="login_form">
+                    <div class="login_form_field">
+                        <label for="login_username" class="login_form_field__label">Username</label>
+                        <input type="text" name="login_username" id="login_username" class="login_form_field__input"
+                            placeholder="Enter username" />
+                    </div>
 
-                        <div class="login_form_field">
-                            <label for="login_password" class="login_form_field__label">Password</label>
-                            <input type="password" name="login_password" id="login_password" class="login_form_field__input" placeholder="Enter password"/>
-                        </div>
+                    <div class="login_form_field">
+                        <label for="login_password" class="login_form_field__label">Password</label>
+                        <input type="password" name="login_password" id="login_password" class="login_form_field__input"
+                            placeholder="Enter password" />
+                    </div>
 
-                        <div class="login_form_field">
-                            <span class="login_form_field__message">
-                                <?php 
+                    <div class="login_form_field">
+                        <span class="login_form_field__message">
+                            <?php 
                                     if (isset($_POST['submit_btn'])) {
                                         if (!$_SESSION['logged_in']) {
                                             echo "Wrong username or password.";
                                         }
                                     }
                                 ?>
-                            </span>
-                        </div>
-                        <div class="login_form_field">
-                            <input type="submit" name="submit_btn" id="submit" value = "Login"/>
-                        </div>
+                        </span>
+                    </div>
+                    <div class="login_form_field">
+                        <input type="submit" name="submit_btn" id="submit" value="Login" />
+                    </div>
                 </form>
 
                 <p>Or register as</p>
@@ -127,20 +133,20 @@
                     <a class="btn-hover color-2" href="../vendor_registration.php">Vendor</a>
                     <a class="btn-hover color-1" href="../shipper_registration.php">Shipper</a>
                 </div>
-               
+
 
                 <div class="homepage_content__socials">
                     <a href="#">
-                        <i class="fa-brands fa-facebook"></i>
+                        Facebook
                     </a>
                     <a href="#">
-                        <i class="fa-brands fa-square-instagram"></i>
+                        Instagram
                     </a>
                     <a href="#">
-                        <i class="fa-brands fa-twitter"></i>
+                        Twitter
                     </a>
                     <a href="#">
-                        <i class="fa-brands fa-pinterest"></i>
+                        Pinterest
                     </a>
                 </div>
             </div>
@@ -152,54 +158,55 @@
 
     <!-- JS code -->
     <script>
-        var dynamicText = document.querySelector('.dynamic_txt')
-        const textArray = ['Zalada', 'Amazon', 'Shopee']
-        const typingDelay = 180;
-        const erasingDelay = 100;
-        const newTextDelay = 2000
-        let i = 0
-        let j = 0
+    var dynamicText = document.querySelector('.dynamic_txt')
+    const textArray = ['Zalada', 'Amazon', 'Shopee']
+    const typingDelay = 180;
+    const erasingDelay = 100;
+    const newTextDelay = 2000
+    let i = 0
+    let j = 0
 
-        function type() {
-            if (i < textArray[j].length) {
-                dynamicText.textContent += textArray[j].charAt(i)
-                i++
-                setTimeout(type, typingDelay)
-            } else {
-                setTimeout(erase, newTextDelay)
-            }
+    function type() {
+        if (i < textArray[j].length) {
+            dynamicText.textContent += textArray[j].charAt(i)
+            i++
+            setTimeout(type, typingDelay)
+        } else {
+            setTimeout(erase, newTextDelay)
         }
-        function erase() {
-            if (i > 0) {
-                dynamicText.textContent = textArray[j].substring(0, i - 1)
-                i--
-                setTimeout(erase, erasingDelay)
-            } else {
-                j++
-                if (j >= textArray.length) j = 0
-                setTimeout(type, typingDelay + 1100)
-            }
-        }
+    }
 
-        document.addEventListener('DOMContentLoaded', function () {
-            setTimeout(type, newTextDelay + 250)
-        })
+    function erase() {
+        if (i > 0) {
+            dynamicText.textContent = textArray[j].substring(0, i - 1)
+            i--
+            setTimeout(erase, erasingDelay)
+        } else {
+            j++
+            if (j >= textArray.length) j = 0
+            setTimeout(type, typingDelay + 1100)
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        setTimeout(type, newTextDelay + 250)
+    })
     </script>
     <script src="../assets/js/validator.js"></script>
     <script>
-        Validator({
-            form: "#login_form",
-            formGroupSelector: ".login_form_field",
-            formMessage: ".login_form_field__message",
-            rules: [
-                Validator.isRequired("#login_username"),
-                Validator.isRequired("#login_password"),
-            ],
-            onSubmit: function(data) {
-                console.log(data)
-            }
-        })
+    Validator({
+        form: "#login_form",
+        formGroupSelector: ".login_form_field",
+        formMessage: ".login_form_field__message",
+        rules: [
+            Validator.isRequired("#login_username"),
+            Validator.isRequired("#login_password"),
+        ],
+        onSubmit: function(data) {
+            console.log(data)
+        }
+    })
     </script>
 </body>
-</html>
 
+</html>

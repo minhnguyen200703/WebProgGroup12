@@ -26,6 +26,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -34,17 +35,20 @@
 
     <!-- Font families -->
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Hachi+Maru+Pop&family=Hubballi&family=Inter:wght@300;400;500;600;700;800&family=Kalam:wght@700&family=Montserrat:wght@254&family=Open+Sans:wght@326;379&family=Permanent+Marker&family=Poppins:wght@100&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,700&family=Rubik+Glitch&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Hachi+Maru+Pop&family=Hubballi&family=Inter:wght@300;400;500;600;700;800&family=Kalam:wght@700&family=Montserrat:wght@254&family=Open+Sans:wght@326;379&family=Permanent+Marker&family=Poppins:wght@100&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,700&family=Rubik+Glitch&display=swap');
     </style>
 
     <!-- Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+        integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <!-- CSS -->
     <link rel="stylesheet" href="./assets/css/base.css">
     <link rel="stylesheet" href="./assets/css/main.css">
-    <link rel="stylesheet" href="./assets/css/cus.css">
+    <link rel="stylesheet" href="./assets/css/shipper.css">
 </head>
+
 <body>
     <!-- Header section -->
     <header>
@@ -57,12 +61,6 @@
         <!-- Nav bar -->
         <nav>
             <ul class="nav_pc_container">
-                <li class="nav_pc_item">
-                    <a href="#" class="nav_pc_item__link">About</a>
-                </li>
-                <li class="nav_pc_item">
-                    <a href="#" class="nav_pc_item__link">Policies</a>
-                </li>
                 <li class="nav_pc_item">
                     <img src="<?php echo $_SESSION['user']['avatar']?>" alt="" class="nav_pc_item__avt">
                     <ul class="account-setting-container hide">
@@ -85,9 +83,9 @@
 
     </header>
 
-        <!-- Main section -->
+    <!-- Main section -->
     <main>
-            <!-- Main header -->
+        <!-- Main header -->
         <div class="main_header">
             <div class="hub_info">
                 <h2>
@@ -96,18 +94,18 @@
             </div>
         </div>
 
-            <!-- Display all product corresspinding to the hub's registered in a table -->
+        <!-- Display all product corresspinding to the hub's registered in a table -->
         <div class="shipper_product_display">
             <table border=1px class="cus_cart_list">
-                    <thead>
-                        <th>No</th>
-                        <th>Order by</th>
-                        <th>Access</th>
-                    </thead>
+                <thead>
+                    <th>No</th>
+                    <th>Order by</th>
+                    <th>Access</th>
+                </thead>
 
-                    <tbody class="cus_cart_body">  
-                            <!-- Render order -->
-                        <?php
+                <tbody class="cus_cart_body">
+                    <!-- Render order -->
+                    <?php
                                 // Take the order data from order.json file
                             $order = json_decode(file_get_contents("./assets/storage/order.json"), true);
                             $index = 0;
@@ -128,7 +126,7 @@
                                         <td>$index</td>
                                         <td>$orderDetail[1]</td>
                                         <td>
-                                            <a href=\"shipper_detail.php?index=$key\">;
+                                            <a class=\"btn-hover color-1\" href=\"shipper_detail.php?index=$key\">➤</a>
                                         </td>
                                     </tr>
                                     "
@@ -136,26 +134,50 @@
                                 }
                             }}};
                         ?>
-                    </tbody>
+                </tbody>
             </table>
         </div>
 
     </main>
 
 
-    <script>
-            // Open the Accouunt setting subnav bar
-        var avatarElement = document.querySelector('.nav_pc_item__avt');
-        var accountSetting = document.querySelector('.account-setting-container');
+    <footer>
+        <nav class="nav_footer">
+            <ul class="nav_pc_container">
+                <li class="nav_pc_item">
+                    <a href="#" class="nav_pc_item__link">About</a>
+                </li>
+                <li class="nav_pc_item">
+                    <a href="#" class="nav_pc_item__link">Policies</a>
+                </li>
+                <li class="nav_pc_item">
+                    <a href="#" class="nav_pc_item__link">Help</a>
+                </li>
+                <li class="nav_pc_item">
+                    <a href="#" class="nav_pc_item__link">Contact</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="group_name">
+            <p>©2022 Group 7</p>
+        </div>
+    </footer>
 
-        avatarElement.onclick = function() {
-            if (accountSetting.classList.contains('hide')) {
-                accountSetting.classList.remove('hide');
-            } else {
-                accountSetting.classList.add('hide');
-            }
+    <script>
+    // Open the Accouunt setting subnav bar
+    var avatarElement = document.querySelector('.nav_pc_item__avt');
+    var accountSetting = document.querySelector('.account-setting-container');
+
+    avatarElement.onclick = function() {
+        if (accountSetting.classList.contains('hide')) {
+            accountSetting.classList.remove('hide');
+        } else {
+            accountSetting.classList.add('hide');
+        }
     }
     </script>
 
 </body>
+
+
 </html>

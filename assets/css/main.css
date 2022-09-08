@@ -299,3 +299,32 @@ input[type="password"] {
     font-weight: 700;
     text-align: center;
  }
+
+ 
+.shipper__icon{
+    width: 3em;
+    height: 3em;
+    border-radius: 50%;
+    align-items: center;
+  }
+footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 170px 8px 200px;
+    box-shadow: 0 -8px 4px rgb(119 217 255 / 20%);
+}
+
+.nav_footer{
+    margin-bottom: 10px;
+}
+main p {
+    font-size: 300px;
+}
+
+main {
+    min-height: calc(100vh - 66px - 122px);
+    overflow: hidden;
+    z-index: -1;
+}

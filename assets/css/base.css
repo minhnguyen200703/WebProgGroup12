@@ -120,16 +120,22 @@ nav {
     border: 2px solid #ccc;
 }
 
+.nav_pc_item img:hover {
+    cursor: pointer;
+
+}
+
 .account-setting-container {
     background-color: white;
     position: absolute;
-    top: 76px;
-    right: 30px;
+    top: 60px;
+    right: 21px;
     box-shadow: rgb(99 99 99 / 20%) 0px 2px 8px 0px;
-    padding: 12px;
+    padding: 5px;
     border-radius: 4px;
     width: 100%;
     transition: 0.5s;
+    text-align: center;
 }
 
 .account-setting-container::after {
@@ -159,6 +165,10 @@ nav {
     font-size: 1.5rem;
     /* padding-bottom: 5px;
     border-bottom: 1px solid #d4d4d4; */
+}
+
+.account-setting-item:hover{
+    opacity: 0.7;
 }
 
 
@@ -318,3 +328,10 @@ input[type="password"] {
 .form_field:first-child .form_field__message {
     text-align: initial;
 }
+
+.avatar {
+    vertical-align: middle;
+    width: 3.125em;
+    height: 3.125em;
+    border-radius: 50%;
+  }
