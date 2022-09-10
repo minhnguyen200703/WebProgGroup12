@@ -74,7 +74,7 @@
         <div class="vendor_back_to_main">
             <a href="./vendor_main.php" class="vendor_back_to_main__btn back_btn" id="vendor_back_btn">Back</a>
         </div>
-        <div class="vendor_product_heading">
+        <div class="vendor_product_heading vendor_main__heading">
             <h1>My Product</h1>
         </div>
 

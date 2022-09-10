@@ -72,11 +72,15 @@
     <main>
 
         <!-- Choosing section -->
+        <div class="vendor_main__heading">
+            <h1> Pick a Section: </h1>
+        </div>
         <div class="vendor_main_container">
-            <button class="vendor_add_product__btn">
+            <button class="vendor_add_product__btn btn-hover  color-2">
                 <a href="vendor_add_product.php"> Add product</a>
             </button>
-            <button class="vendor_view_product__btn">
+            <h2> Or </h2>
+            <button class="vendor_view_product__btn  btn-hover  color-2">
                 <a href="vendor_product.php"> View product</a>
             </button>
         </div>

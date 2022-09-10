@@ -93,7 +93,7 @@
     <main>
 
         <!-- Back to Vendor main section -->
-        <div class="vendor_back_to_main">
+        <div class="vendor_back_to_main back_btn" id="vendor_back_btn">
             <a href="./vendor_main.php" class="vendor_back_to_main__btn"><i
                     class="fa-solid fa-chevron-left"></i>Back</a>
         </div>
@@ -127,12 +127,13 @@
                         <span class="add_desc">Description</span>
                         <input id="product_desc" type="text" maxlength="500" required
                             placeholder="Please input the description" name="desc" class="add_box">
-                        <span class="form_field__message"></span>
+                        <span class=" form_field__message"></span>
                     </div>
                     <br>
                     <br>
-                    <div class="add_item vendor_submit_btn">
-                        <input type="submit" value="add_product" name="add_product" id="submit_product_btn">
+                    <div class="add_item ">
+                        <input type="submit" value="add_product" name="add_product" id="submit_product_btn"
+                            class="vendor_add_product__btn btn-hover  color-2">
                     </div>
                 </div>
             </form>
