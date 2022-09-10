@@ -52,6 +52,8 @@ td {
 a.btn-hover.color-1 {
     color: black;
     border-radius: 0.625rem;
+    padding: 8px 32px;
+    color: white;
 }
 
 
