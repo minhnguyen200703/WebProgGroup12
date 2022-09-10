@@ -63,17 +63,17 @@
 
                 <li class="nav_pc_item">
                     <img src="<?php echo $_SESSION['user']['avatar']?>" alt="User's avatar" class="nav_pc_item__avt">
-                    <ul class="account-setting-container hide">
-                        <li class="account-setting-item">
+                    <ul class="account_setting_container hide">
+                        <li class="account_setting_item">
                             <a href="./my_account.php">My account</a>
                         </li>
-                        <li class="account-setting-item">
+                        <li class="account_setting_item">
                             <a href="./index.php">Log out</a>
                         </li>
                     </ul>
                 </li>
                 <li>
-                    <h1><?php echo $_SESSION['user']['real_name'] ?></h1>
+                    <h2><?php echo $_SESSION['user']['real_name'] ?></h2>
                 </li>
 
             </ul>
@@ -87,8 +87,8 @@
         <div class="main_header">
             <div class="main_header_navigator">
                 <h3 id="main_header__title">All products</h3>
-                <a id="shopping_cart_link" href="cus_cart.php">
-                    Đó là FBI
+                <a id="shopping_cart_link" href="./cus_cart.php">
+                    To cart
                 </a>
             </div>
 
@@ -115,12 +115,6 @@
             </div>
 
 
-            <!-- Shopping cart -->
-            <!-- <div class="shopping_cart">
-                <a id="shopping_cart_link" href="cus_cart.php">
-                    <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                </a>
-            </div> -->
         </div>
 
         <!-- Product list -->
@@ -166,26 +160,27 @@
                             // If there is no filter and search value, or the product satisfy all the filter and search value, take the value and render the product 
                             $image = $product['image'];
                             $name = $product['name'];
+                            $href_link = str_replace(' ', "%20", $name);
                             $price = $product['price'];
                             $desc = $product['desc'];
                             // The a href will link to the cus_product with url appended with name value of the product
-                            echo "<a href=\"cus_product.php?name=$name \" class=\"product_list__item\">";
+                            echo "<a href=\"cus_product.php?name=$href_link\" class=\"product_list__item\">";
                             echo "<div class=\"product_list__item_price\">";
-                            echo    "<h2 id=\"product_price\">$$price</h2>";
+                            echo    "<h2 class=\"product_price\">$$price</h2>";
                             echo "</div>";
                             echo "<div class=\"product_list__item_img\">";
                             echo    "<img class=\"product_img\" src=\"./assets/product_img/$image\" alt=\"Product's image\">";
                             echo "</div>";
                             echo "<div class=\"product_list__item_name\">";
-                            echo     "<h1>$name</h1>";
+                            echo     "<h2>$name</h2>";
                             echo "</div>";
                             echo "<div class=\"product_list__item_desc\">";
                             echo    "<p>$desc</p>";
                             echo "</div>";
                             echo "<div class=\"product_list__item_buybtn\">";
-                            echo     "<button class=\"add_to_cart\" class=\"form_field__label btn-hover color-9\">";
+                            echo     "<div class=\"form_field__label btn-hover add_to_cart color-9\">";
                             echo         "Add to cart";
-                            echo     "</button>";
+                            echo     "</div>";
                             echo "</div>";
                             echo    "</a>";
                         }
@@ -213,7 +208,7 @@
     <script>
     // Open the Accouunt setting subnav bar
     var avatarElement = document.querySelector('.nav_pc_item__avt');
-    var accountSetting = document.querySelector('.account-setting-container');
+    var accountSetting = document.querySelector('.account_setting_container');
 
     avatarElement.onclick = function() {
         if (accountSetting.classList.contains('hide')) {

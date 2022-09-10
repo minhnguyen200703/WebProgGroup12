@@ -18,7 +18,7 @@
             } else {
                 $avt_err = "";
                 $avatar = basename($_FILES['new_avatar']['name']);
-                $target_dir = "./assets/uploads/";
+                $target_dir = "assets/avatars";
                 $target_file = $target_dir . $avatar;
                 $is_file_uploaded = move_uploaded_file($_FILES["new_avatar"]["tmp_name"], $target_file);
                 $new_avatar_path = $target_dir. $avatar;
@@ -34,7 +34,6 @@
                             if (trim($_SESSION['user']['username']) == trim($account_details[1])) {
                                 $old_avatar_path = $account_details[3];
                                 $account = str_replace($old_avatar_path, $new_avatar_path, $account);
-              
                             };
                             $script .= $account;
                         }               
@@ -43,7 +42,10 @@
                 }
 
                 $account_file = fopen( '../storage/accounts.db', 'w' );
-                fwrite($account_file, $script);
+                // In case successfully update avatar
+                if (fwrite($account_file, $script)) {
+                    $_SESSION['user']['avatar'] = $new_avatar_path;
+                };
                 fclose($account_file);
                 header("Refresh:0");
             }
@@ -83,11 +85,11 @@
             <ul class="nav_pc_container">
                 <li class="nav_pc_item">
                     <img src="<?php echo $_SESSION['user']['avatar']?>" alt="User's avatar" class="nav_pc_item__avt">
-                    <ul class="account-setting-container hide">
-                        <li class="account-setting-item">
+                    <ul class="account_setting_container hide">
+                        <li class="account_setting_item">
                             <a href="./my_account.php">My account</a>
                         </li>
-                        <li class="account-setting-item">
+                        <li class="account_setting_item">
                             <a href="./index.php">Log out</a>
                         </li>
                     </ul>
@@ -229,7 +231,7 @@
     <script src="./assets/js/preview.js"></script>'
     <script>
     var avatarElement = document.querySelector('.nav_pc_item__avt');
-    var accountSetting = document.querySelector('.account-setting-container');
+    var accountSetting = document.querySelector('.account_setting_container');
 
 
         // Open and close account setting on avatar

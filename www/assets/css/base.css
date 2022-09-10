@@ -66,9 +66,6 @@ header {
     background-color: white;
 }
 
-nav {
-}
-
 .brand {
     height: 46px;
     display: flex;
@@ -125,7 +122,7 @@ nav {
 
 }
 
-.account-setting-container {
+.account_setting_container {
     background-color: white;
     position: absolute;
     top: 60px;
@@ -138,7 +135,7 @@ nav {
     text-align: center;
 }
 
-.account-setting-container::after {
+.account_setting_container::after {
     position: absolute;
     background-color: white;
     content: "";
@@ -151,28 +148,28 @@ nav {
     box-shadow: rgb(99 99 99 / 20%) 0px 2px 8px -8px;
 }
 
-.account-setting-item {
+.account_setting_item {
     padding: 8px 0 4px;
     border-bottom: 1px solid #d4d4d4;
 }
 
-.account-setting-item:first-child {
+.account_setting_item:first_child {
     padding-top: 0;
 }
 
-.account-setting-item a {
+.account_setting_item a {
     color: black;
     font-size: 1.5rem;
     /* padding-bottom: 5px;
     border-bottom: 1px solid #d4d4d4; */
 }
 
-.account-setting-item:hover{
+.account_setting_item:hover{
     opacity: 0.7;
 }
 
 main {
-    height: calc(100vh - 66px - 107px);
+    min-height: calc(100vh - 66px - 107px);
     overflow: hidden;
     z-index: -1;
 }
@@ -180,9 +177,6 @@ main {
 /* Footer section */
 footer {
     text-align: center;
-}
-
-.footer_container {
 }
 
 .footer_item {
@@ -209,10 +203,6 @@ footer {
     border-radius: 30px;
 }
 
-.btn-m-size {
-
-}
-
 .btn-l-size {
     min-width: 190px;
     font-size: 1.6rem;
@@ -228,15 +218,11 @@ footer {
     text-align: center;
     border: none;
     background-size: 300% 100%;
-    -o-transition: all 0.4s ease-in-out;
-    -webkit-transition: all 0.4s ease-in-out;
     transition: all 0.4s ease-in-out;
 }
 
 .btn-hover:hover {
     background-position: 100% 0;
-    -o-transition: all 0.4s ease-in-out;
-    -webkit-transition: all 0.4s ease-in-out;
     transition: all 0.4s ease-in-out;
 }
 

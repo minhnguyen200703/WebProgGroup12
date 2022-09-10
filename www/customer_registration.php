@@ -106,10 +106,12 @@
 </head>
 
 <body>
+        <!-- Header -->
     <header>
-        <a href="./index.php" class="back_btn" id="customer_back_btn"><i
-                class="fa-solid fa-chevron-left"></i>Back</a>
+        <a href="./index.php" class="back_btn" id="customer_back_btn">Back</a>
     </header>
+
+    <!-- Main -->
     <main>
         <div class="registration customer">
             <div class="registration__left">
@@ -143,7 +145,6 @@
                         </label>
                         <input type="file" name="avatar" accept="image/*" id="avatar" onchange="loadFile(event)"
                             style="display: none">
-                        <!-- <img src="data;" alt="Preview image" id="output" style="display: none;"> -->
                         <span class="form_field__message">
 
                         </span>
@@ -164,8 +165,8 @@
                     </div>
 
                     <div class="form_field">
-                        <label for="username" class="form_field__label">Password</label>
-                        <input type="text" class="form_field__input" id="password" placeholder="Enter password"
+                        <label for="password" class="form_field__label">Password</label>
+                        <input type="password" class="form_field__input" id="password" placeholder="Enter password"
                             name="password">
                         <span class="form_field__message">
                             <?php echo isset($passwordErr) ? $passwordErr : ''  ?>
@@ -173,7 +174,7 @@
                     </div>
 
                     <div class="form_field">
-                        <label for="username" class="form_field__label">Name</label>
+                        <label for="name" class="form_field__label">Name</label>
                         <input type="text" class="form_field__input" id="name" placeholder="Enter your name"
                             name="name">
                         <span class="form_field__message">

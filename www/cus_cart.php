@@ -37,17 +37,17 @@
             <ul class="nav_pc_container">
                 <li class="nav_pc_item">
                     <img src="<?php echo $_SESSION['user']['avatar']?>" alt="User's avatar" class="nav_pc_item__avt">
-                    <ul class="account-setting-container hide">
-                        <li class="account-setting-item">
+                    <ul class="account_setting_container hide">
+                        <li class="account_setting_item">
                             <a href="./my_account.php">My account</a>
                         </li>
-                        <li class="account-setting-item">
+                        <li class="account_setting_item">
                             <a href="./index.php">Log out</a>
                         </li>
                     </ul>
                 </li>
                 <li>
-                    <h1><?php echo $_SESSION['user']['real_name'] ?></h1>
+                    <h2><?php echo $_SESSION['user']['real_name'] ?></h2>
                 </li>
             </ul>
         </nav>
@@ -59,7 +59,7 @@
         <div class="main_header">
             <!-- Back to cus_main -->
             <div class="cus_back_to_main">
-                <a href="./cus_main.php" class="cus_back_to_main__btn"><i class="fa-solid fa-chevron-left"></i>Back</a>
+                <a href="./cus_main.php" class="cus_back_to_main__btn">Back</a>
             </div>
         </div>
 
@@ -67,13 +67,15 @@
             <h1>Shopping cart</h1>
             <table id="cus_cart_list">
                 <thead>
-                    <th>No</th>
-                    <th>Product Image</th>
-                    <th>Name</th>
-                    <th>Price</th>
-                    <th>Quantity</th>
-                    <th>Description</th>
-                    <th class="remove_section">Remove</th>
+                    <tr>
+                        <th>No</th>
+                        <th>Product Image</th>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Description</th>
+                        <th class="remove_section">Remove</th>
+                    </tr>
                 </thead>
 
                 <tbody class="cus_cart_body">
@@ -82,11 +84,11 @@
             </table>
 
             <div class="cus_cart_btn_container">
-                <button class="checkout_btn" class="btn-hover color-9">
+                <button class="btn-hover color-9 checkout_btn">
                     Check out
                 </button>
 
-                <button class="reset_card" class="btn-hover color-9">
+                <button class="btn-hover color-9 reset_card">
                     Reset
                 </button>
             </div>
@@ -127,7 +129,7 @@
             cardBody.innerHTML += `
             <tr class=\"cus_item_list\">
                 <td>${productId + 1}</td>
-                <td><img src="${product.product.image}" alt="Product's image"></td>
+                <td><img src="./assets/product_img/${product.product.image}" alt="Product's image"></td>
                 <td>${product.product.name}</td>
                 <td>${product.product.price}</td>
                 <td>${product.quantity}</td>
@@ -193,7 +195,7 @@
     <script>
     // Open the Accouunt setting subnav bar
     var avatarElement = document.querySelector('.nav_pc_item__avt');
-    var accountSetting = document.querySelector('.account-setting-container');
+    var accountSetting = document.querySelector('.account_setting_container');
 
     avatarElement.onclick = function() {
         if (accountSetting.classList.contains('hide')) {

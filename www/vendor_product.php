@@ -55,7 +55,7 @@
                     </ul>
                 </li>
                 <li class="nav_pc_item">
-                    <h1><?php echo $_SESSION['user']['business_name'] ?></h1>
+                    <h2><?php echo $_SESSION['user']['business_name'] ?></h2>
                 </li>
             </ul>
         </nav>
@@ -64,19 +64,26 @@
     <main>
 
         <!-- Back to Vendor main section -->
-        <div class="vendor_back_to_main">
-            <a href="./vendor_main.php" class="vendor_back_to_main__btn back_btn" id="vendor_back_btn">Back</a>
+        <div class="vendor_back_to_main_container">
+            <a href="./vendor_main.php" class="vendor_back_to_main__btn">
+                <div class="vendor_back_to_main back_btn" id="vendor_back_btn">
+                    Back
+                </div>
+            </a>
         </div>
+        
         <div class="vendor_product_heading vendor_main__heading">
             <h1>My Product</h1>
         </div>
 
         <table class="vendor_product_list vendor_cart_body vendor_cart_list">
             <thead>
-                <th>Product Image</th>
-                <th>Name</th>
-                <th>Price</th>
-                <th>Description</th>
+                <tr>
+                    <th>Product Image</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Description</th>
+                </tr>
             </thead>
 
             <tbody class="vendor_cart_body">
@@ -99,7 +106,7 @@
                             $price = $product['price'];
                             $desc = $product['desc'];
                             echo "<tr class=\"vendor_item_list\">";
-                            echo    "<td><img class=\"vendor_product__img\" src=\"./assets/product_img/$image\" alt=\"Product image\"></td>";
+                            echo "<td><img class=\"vendor_product__img\" src=\"./assets/product_img/$image\" alt=\"Product image\"></td>";
                             echo "<td>$name</td>";
                             echo "<td>$price</td>";
                             echo "<td>$desc</td>";

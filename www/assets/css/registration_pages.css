@@ -171,10 +171,6 @@ h2 {
     margin-top: 16px;
 }
 
-.shipper .form_field:nth-child(5) {
-    /* justify-content: flex-start; */
-}
-
 .shipper .form_field:nth-child(5) select {
     width: calc(64% - 2px);
     padding: 8px 20px;
@@ -193,8 +189,6 @@ h2 {
 }
 
 select {
-    -webkit-appearance: none;
-    -moz-appearance: none;
     background: transparent;
     background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
     background-repeat: no-repeat;
@@ -271,8 +265,5 @@ input[type="password"] {
 /* Validation */
 .invalid input {
     border: 2px solid rgb(243, 116, 116);
-}
-
-.valid input {
 }
 

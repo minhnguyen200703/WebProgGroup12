@@ -109,7 +109,7 @@
 
 <body>
     <header>
-        <a href="./index.php" class="back_btn" id="vendor_back_btn"><i class="fa-solid fa-chevron-left"></i>Back</a>
+        <a href="./index.php" class="back_btn" id="vendor_back_btn">Back</a>
     </header>
     <main>
         <div class="registration vendor">
@@ -140,12 +140,10 @@
                     <div class="form_field">
                         <label for="avatar" class="edit_btn form_field__label">
                             <img src="./assets/img/mock_avt2.png" alt="" class="avt_block">
-                            <i class="fa-solid fa-camera camera_icon"></i>
                         </label>
                         <input type="file" name="avatar" accept="image/*" id="avatar" onchange="loadFile(event)"
                             style="display: none">
-                        <img src="" alt="" id="output">
-                        <span class="form_field__message"></span>
+                        <span class="form_field__message"></span>xml_error_string
                     </div>
 
                     <div class="form_field">
@@ -156,7 +154,7 @@
                     </div>
 
                     <div class="form_field">
-                        <label for="username" class="form_field__label">Password</label>
+                        <label for="password" class="form_field__label">Password</label>
                         <input type="password" class="form_field__input" id="password" placeholder="Enter password"
                             name="password">
                         <span class="form_field__message"></span>

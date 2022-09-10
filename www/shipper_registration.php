@@ -107,8 +107,7 @@
 
 <body>
     <header>
-        <a href="./index.php" class="back_btn" id="shipper_back_btn"><i
-                class="fa-solid fa-chevron-left"></i>Back</a>
+        <a href="./index.php" class="back_btn" id="shipper_back_btn">Back</a>
     </header>
     <main>
         <div class="registration shipper">
@@ -140,11 +139,9 @@
                     <div class="form_field">
                         <label for="avatar" class="edit_btn form_field__label">
                             <img src="./assets/img/mock_avt2.png" alt="User's mock avatar" class="avt_block">
-                            <i class="fa-solid fa-camera camera_icon"></i>
                         </label>
                         <input type="file" name="avatar" accept="image/*" id="avatar" onchange="loadFile(event)"
                             style="display: none">
-                        <img src="" alt="Shipper's avatar" id="output">
                         <span class="form_field__message"></span>
                     </div>
 
@@ -157,7 +154,7 @@
 
                     <div class="form_field">
                         <label for="password" class="form_field__label">Password</label>
-                        <input type="text" class="form_field__input" id="password" placeholder="Enter username"
+                        <input type="password" class="form_field__input" id="password" placeholder="Enter username"
                             name="password">
                         <span class="form_field__message"></span>
                     </div>

@@ -54,17 +54,17 @@
             <ul class="nav_pc_container">
                 <li class="nav_pc_item">
                     <img src="<?php echo $_SESSION['user']['avatar']?>" alt="User's avatar" class="nav_pc_item__avt">
-                    <ul class="account-setting-container hide">
-                        <li class="account-setting-item">
+                    <ul class="account_setting_container hide">
+                        <li class="account_setting_item">
                             <a href="./my_account.php">My account</a>
                         </li>
-                        <li class="account-setting-item">
+                        <li class="account_setting_item">
                             <a href="./index.php">Log out</a>
                         </li>
                     </ul>
                 </li>
                 <li>
-                    <h1><?php echo $_SESSION['user']['real_name'] ?></h1>
+                    <h2><?php echo $_SESSION['user']['real_name'] ?></h2>
                 </li>
             </ul>
         </nav>
@@ -86,9 +86,11 @@
         <div class="shipper_product_display">
             <table class="shipper_cart_list">
                 <thead>
-                    <th>No</th>
-                    <th>Order by</th>
-                    <th>Access</th>
+                    <tr>
+                        <th>No</th>
+                        <th>Order by</th>
+                        <th>Access</th>
+                    </tr>
                 </thead>
 
                 <tbody class="shipper_cart_body">
@@ -135,7 +137,7 @@
     <script>
     // Open the Accouunt setting subnav bar
     var avatarElement = document.querySelector('.nav_pc_item__avt');
-    var accountSetting = document.querySelector('.account-setting-container');
+    var accountSetting = document.querySelector('.account_setting_container');
 
     avatarElement.onclick = function() {
         if (accountSetting.classList.contains('hide')) {

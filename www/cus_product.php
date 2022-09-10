@@ -50,17 +50,17 @@
             <ul class="nav_pc_container">
                 <li class="nav_pc_item">
                     <img src="<?php echo $_SESSION['user']['avatar']?>" alt="User's avatar" class="nav_pc_item__avt">
-                    <ul class="account-setting-container hide">
-                        <li class="account-setting-item">
+                    <ul class="account_setting_container hide">
+                        <li class="account_setting_item">
                             <a href="my_account.php">My account</a>
                         </li>
-                        <li class="account-setting-item">
+                        <li class="account_setting_item">
                             <a href="./index.php">Log out</a>
                         </li>
                     </ul>
                 </li>
                 <li>
-                    <h1><?php echo $_SESSION['user']['real_name'] ?></h1>
+                    <h2><?php echo $_SESSION['user']['real_name'] ?></h2>
                 </li>
             </ul>
         </nav>
@@ -72,16 +72,16 @@
         <div class="main_header">
             <!-- Back to cus_main -->
             <div class="cus_back_to_main">
-                <a href="./cus_main.php" class="cus_back_to_main__btn"><i class="fa-solid fa-chevron-left"></i>Back</a>
+                <a href="./cus_main.php" class="cus_back_to_main__btn">Back</a>
             </div>
             <!-- Shopping cart -->
             <div class="shopping_cart">
-                <a href="cus_cart.php">
-                    <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                <a id="shopping_cart_link" href="./cus_cart.php">
+                    To cart
                 </a>
             </div>
 
-        </div class="cus_detail_product_container">
+        </div>
         <?php
             $image = $t_product[0]['image'];
             $name = $t_product[0]['name'];
@@ -92,10 +92,10 @@
             echo    "<h2>$$price</h2>";
             echo "</div>";
             echo "<div class=\"detail_product_list__item_img\">";
-            echo    "<img src=\"./assets/product_img/$image\" alt=\"Product's image\">";
+            echo    "<img src=\"./assets/product_img/$image\" alt=\"$image\">";
             echo "</div>";
             echo "<div class=\"detail_product_list__item_name\">";
-            echo     "<h1>$name</h1>";
+            echo     "<h2>$name</h2>";
             echo "</div>";
             echo "<div class=\"detail_product_list__item_desc\">";
             echo    "<p>$desc</p>";
@@ -113,6 +113,7 @@
     ?>
 
     <script>
+
     // Add product to cart in LOCAL STORAGE
     var cart = []
 
@@ -124,10 +125,10 @@
         }
 
         // Take all data of the product by query selector and innerHTML
-        var productName = document.querySelector('.detail_product_list__item_name h1').innerHTML;
+        var productName = document.querySelector('.detail_product_list__item_name h2').innerHTML;
         var productPrice = document.querySelector('.detail_product_list__item_price h2').innerHTML;
         var productDetail = document.querySelector('.detail_product_list__item_desc p').innerHTML;
-        var image = document.querySelector(".detail_product_list__item_img img").src;
+        var image = document.querySelector(".detail_product_list__item_img img").alt;
         // Append to product object
         var product = {
             name: productName,
@@ -160,7 +161,7 @@
     <script>
     // Open the Accouunt setting subnav bar
     var avatarElement = document.querySelector('.nav_pc_item__avt');
-    var accountSetting = document.querySelector('.account-setting-container');
+    var accountSetting = document.querySelector('.account_setting_container');
 
     avatarElement.onclick = function() {
         if (accountSetting.classList.contains('hide')) {

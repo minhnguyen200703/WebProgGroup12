@@ -53,7 +53,7 @@
                     </ul>
                 </li>
                 <li class="nav_pc_item">
-                    <h1><?php echo $_SESSION['user']['business_name'] ?></h1>
+                    <h2><?php echo $_SESSION['user']['business_name'] ?></h2>
                 </li>
             </ul>
         </nav>
@@ -68,13 +68,17 @@
             <h1> Pick a Section: </h1>
         </div>
         <div class="vendor_main_container">
-            <button class="vendor_add_product__btn btn-hover  color-2">
-                <a href="vendor_add_product.php"> Add product</a>
-            </button>
+            <a href="vendor_add_product.php">
+                <div class="vendor_add_product__btn btn-hover  color-2">
+                    Add product
+                </div>
+            </a>
             <h2> Or </h2>
-            <button class="vendor_view_product__btn  btn-hover  color-2">
-                <a href="vendor_product.php"> View product</a>
-            </button>
+            <a href="vendor_product.php">
+                <div class="vendor_view_product__btn  btn-hover  color-2">
+                     View product
+                </div>
+            </a>
         </div>
     </main>
 

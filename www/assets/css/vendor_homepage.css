@@ -18,9 +18,6 @@ header {
     background-color: white;
 }
 
-nav {
-}
-
 .brand {
     height: 46px;
     display: flex;
@@ -87,13 +84,6 @@ main {
     justify-content: space-between;
 }
 
-.biography__intro {
-
-}
-
-.bioraphy__intro__rating {
-
-}
 
 .biography__sale_container {
     display: flex;
