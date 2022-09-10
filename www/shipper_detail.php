@@ -95,6 +95,9 @@
                 <a href="./shipper_main.php" class="shipper_back_to_main__btn back_btn" id="shipper_back_btn">Back</a>
             </div>
         </div>
+        <div class="hub_info">
+            <h1>Shipping Details</h1>
+        </div>
 
         <!-- Buyer personal inforamtion -->
         <div class="buyer_detail_container">
@@ -104,7 +107,7 @@
 
         <!-- Order detail -->
         <div class="order_detail_container">
-            <table border=1px class="cus_cart_list">
+            <table class="shipper_cart_list">
                 <thead class="order_head">
                     <th>No</th>
                     <th>Product Image</th>
@@ -113,7 +116,7 @@
                     <th>Quantity</th>
                 </thead>
 
-                <tbody class="order_body">
+                <tbody class="order_body shipper_cart_body">
                     <?php
                         $total_price = 0;
                         foreach ($order as $key => $product) {
@@ -125,7 +128,7 @@
                             $quantity = $product['quantity'];
                             $total_price += (int)substr($price, 1) * (int)$quantity;
                             echo "
-                                <tr>
+                                <tr class=\"shipper_item_list\">
                                     <td>$no</td>
                                     <td>
                                         <img src=\"$image\" alt=\"Product's image\">
@@ -148,11 +151,11 @@
         </div>
 
         <div class="order_status_btn">
-            <button class="delivered">
+            <button class="delivered btn-hover color-1">
                 Deliver
             </button>
 
-            <button class="canceled">
+            <button class="canceled btn-hover color-1">
                 Cancel
             </button>
         </div>

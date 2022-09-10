@@ -78,7 +78,7 @@
             <h1>My Product</h1>
         </div>
 
-        <table border=1px class="vendor_product_list">
+        <table class="vendor_product_list vendor_cart_body vendor_cart_list">
             <thead>
                 <th>Product Image</th>
                 <th>Name</th>
@@ -86,16 +86,16 @@
                 <th>Description</th>
             </thead>
 
-            <tbody>
+            <tbody class="vendor_cart_body">
                 <!-- Insert data of each product for each row in the table <tbody> -->
                 <?php
                     // Take the data out from product.json and decode 
                     $products = json_decode(file_get_contents("../storage/product.json"), true);
 
-                        // Check if array emtpy
+                    // Check if array emtpy
                     if (!empty($products)) {
 
-                            // If not empty
+                        // If not empty
                         // Loop each element in $products to take each data of each product 
                         foreach($products as $product) {
                             // Compare the username of who added the product with the current username
@@ -105,7 +105,7 @@
                             $name = $product['name'];
                             $price = $product['price'];
                             $desc = $product['desc'];
-                            echo "<tr>";
+                            echo "<tr class=\"vendor_item_list\">";
                             echo    "<td><img class=\"vendor_product__img\" src=\"./assets/product_img/$image\" alt=\"Product image\"></td>";
                             echo "<td>$name</td>";
                             echo "<td>$price</td>";

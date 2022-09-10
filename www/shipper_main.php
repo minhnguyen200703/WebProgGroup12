@@ -83,22 +83,22 @@
         <!-- Main header -->
         <div class="main_header">
             <div class="hub_info">
-                <h2>
+                <h1>
                     Hub name: <?php echo $hub_user?>
-                </h2>
+                </h1>
             </div>
         </div>
 
         <!-- Display all product corresspinding to the hub's registered in a table -->
         <div class="shipper_product_display">
-            <table border=1px class="cus_cart_list">
+            <table class="shipper_cart_list">
                 <thead>
                     <th>No</th>
                     <th>Order by</th>
                     <th>Access</th>
                 </thead>
 
-                <tbody class="cus_cart_body">
+                <tbody class="shipper_cart_body">
                     <!-- Render order -->
                     <?php
                                 // Take the order data from order.json file
@@ -117,7 +117,7 @@
                                     ++$index;
                                         // Write down order as a row in table; link to the shipper detail page with url appended with real index in json file, get by $GET method
                                     echo "
-                                    <tr>
+                                    <tr class='shipper_item_list'>
                                         <td>$index</td>
                                         <td>$orderDetail[1]</td>
                                         <td>
