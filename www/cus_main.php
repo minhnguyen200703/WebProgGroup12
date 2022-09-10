@@ -100,35 +100,34 @@
             <div class="main_header_navigator">
                 <h3 id="main_header__title">All products</h3>
                 <a id="shopping_cart_link" href="cus_cart.php">
-                    <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                    Đó là FBI
                 </a>
             </div>
-                
-                    <!-- Search and filtering -->
-                <div class="search_and_filtering">
-                    <form class="search_and_filtering_form" method="get" action="cus_main.php">
-                        <div class="search_and_filtering_input">
-                            <label class="filtering_price_data_heading" for="filtering_price_data">Min Price</label>
-                            <input class="filtering_price_data" type="number" name="min_price">
-                        </div>
-                        <div class="search_and_filtering_input"> 
-                            <label class="filtering_price_data_heading" for="filtering_price_data">Max Price</label>
-                            <input class="filtering_price_data" type="number" name="max_price">
-                        </div><br>
-                        <div class="search_and_filtering_input">
-                            <label class="filtering_price_data_heading" for="filtering_price_data">Name</label>
-                            <input class="search_bar" type="text" name="name">
-                            <input id="filter_submit_btn" type="submit" name="act" value="Filter">
-                        </div>
-                        <br>
-                        <!-- <div class="search_and_filtering_input">
+
+            <!-- Search and filtering -->
+            <div class="search_and_filtering">
+                <form class="search_and_filtering_form" method="get" action="cus_main.php">
+                    <!-- <div class="search_and_filtering_input"> -->
+                    <input class="filtering_price_data" type="number" name="min_price" placeholder="Min Price">
+                    <!-- </div> -->
+                    <!-- <div class="search_and_filtering_input">  -->
+                    <input class="filtering_price_data" type="number" name="max_price" placeholder="Max Price">
+                    <!-- </div><br> -->
+                    <!-- <div class="search_and_filtering_input"> -->
+                    <input class="search_bar" type="text" name="name" placeholder="Name">
+                    <!-- </div> -->
+                    <!-- <div class="search_and_filtering_input_filter"> -->
+                    <input id="filter_submit_btn" type="submit" name="act" value="Filter">
+                    <!-- </div> -->
+
+                    <!-- <div class="search_and_filtering_input">
                             <input id="filter_submit_btn" type="submit" name="act" value="Filter">
                         </div> -->
-                    </form>
-                </div>
-            
+                </form>
+            </div>
 
-                <!-- Shopping cart -->
+
+            <!-- Shopping cart -->
             <!-- <div class="shopping_cart">
                 <a id="shopping_cart_link" href="cus_cart.php">
                     <i class="fa fa-shopping-cart" aria-hidden="true"></i>
@@ -211,8 +210,8 @@
                         // If the data in json file empty, show No product added
                         echo "<span class=\"no_product\"> No product added </span>";
                     };
-                ?>         
-                
+                ?>
+
             </div>
 
         </div>

@@ -108,7 +108,7 @@
             echo    "<p>$desc</p>";
             echo "</div>";
             echo "<div class=\"detail_product_list__item_add\">";
-            echo     "<button onclick=\"addProduct()\">Add to cart </button>";
+            echo     "<button class=\"add_to_cart\" onclick=\"addProduct()\">Add to cart </button>";
             echo "</div>";
             echo  "</div>";
         ?>

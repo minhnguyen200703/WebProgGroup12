@@ -73,33 +73,33 @@
 
         <div class="cus_cart_container">
             <h1>Shopping cart</h1>
-            <table border=1px id="cus_cart_list">
-                    <thead>
-                        <th>No</th>
-                        <th>Product Image</th>
-                        <th>Name</th>
-                        <th>Price</th>
-                        <th>Quantity</th>
-                        <th>Description</th>
-                        <th>Remove</th>
-                    </thead>
+            <table id="cus_cart_list">
+                <thead>
+                    <th>No</th>
+                    <th>Product Image</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Description</th>
+                    <th class="remove_section">Remove</th>
+                </thead>
 
-                    <tbody class="cus_cart_body">  
+                <tbody class="cus_cart_body">
 
-                    </tbody>
+                </tbody>
             </table>
 
             <div class="cus_cart_btn_container">
-                <button class="checkout_btn">
+                <button class="checkout_btn" class="btn-hover color-9">
                     Check out
                 </button>
-                
-                <button class="reset_card">
+
+                <button class="reset_card" class="btn-hover color-9">
                     Reset
-                </button>        
+                </button>
             </div>
         </div>
-    
+
     </main>
 
     <footer>
@@ -151,7 +151,7 @@
 
             // Append the product to the cardBody, or the tbody, as the forEach run
             cardBody.innerHTML += `
-            <tr>
+            <tr class=\"cus_item_list\">
                 <td>${productId + 1}</td>
                 <td><img src="${product.product.image}" alt="Product's image"></td>
                 <td>${product.product.name}</td>
@@ -159,7 +159,7 @@
                 <td>${product.quantity}</td>
                 <td>${product.product.detail}</td>
                 <td>
-                    <a href="#" onclick="removeItem(${productId})">Remove</a>
+                    <a href="#" onclick="removeItem(${productId})" class= 'remove_btn btn-hover color-9' >Remove</a>
                 </td>
             </tr>
         `
