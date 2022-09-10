@@ -97,25 +97,43 @@
 
         <!-- Main header -->
         <div class="main_header">
-            <h3>Tất cả sản phẩm</h3>
-
-            <!-- Search and filtering -->
-            <div class="search_and_filtering">
-                <form method="get" action="cus_main.php">
-                    Min Price <input class="filtering_price_data" type="number" name="min_price"><br>
-                    Max Price <input class="filtering_price_data" type="number" name="max_price"><br>
-                    Name <input class="search_bar" type="text" name="name"><br>
-                    <br>
-                    <input class="filter_submit_btn" type="submit" name="act" value="Filter">
-                </form>
-            </div>
-
-            <!-- Shopping cart -->
-            <div class="shopping_cart">
-                <a href="cus_cart.php">
+            <div class="main_header_navigator">
+                <h3 id="main_header__title">All products</h3>
+                <a id="shopping_cart_link" href="cus_cart.php">
                     <i class="fa fa-shopping-cart" aria-hidden="true"></i>
                 </a>
             </div>
+                
+                    <!-- Search and filtering -->
+                <div class="search_and_filtering">
+                    <form class="search_and_filtering_form" method="get" action="cus_main.php">
+                        <div class="search_and_filtering_input">
+                            <label class="filtering_price_data_heading" for="filtering_price_data">Min Price</label>
+                            <input class="filtering_price_data" type="number" name="min_price">
+                        </div>
+                        <div class="search_and_filtering_input"> 
+                            <label class="filtering_price_data_heading" for="filtering_price_data">Max Price</label>
+                            <input class="filtering_price_data" type="number" name="max_price">
+                        </div><br>
+                        <div class="search_and_filtering_input">
+                            <label class="filtering_price_data_heading" for="filtering_price_data">Name</label>
+                            <input class="search_bar" type="text" name="name">
+                            <input id="filter_submit_btn" type="submit" name="act" value="Filter">
+                        </div>
+                        <br>
+                        <!-- <div class="search_and_filtering_input">
+                            <input id="filter_submit_btn" type="submit" name="act" value="Filter">
+                        </div> -->
+                    </form>
+                </div>
+            
+
+                <!-- Shopping cart -->
+            <!-- <div class="shopping_cart">
+                <a id="shopping_cart_link" href="cus_cart.php">
+                    <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                </a>
+            </div> -->
         </div>
 
         <!-- Product list -->
@@ -164,12 +182,12 @@
                             $price = $product['price'];
                             $desc = $product['desc'];
                             // The a href will link to the cus_product with url appended with name value of the product
-                            echo "<a href=\"./cus_product.php?name=$name \" class=\"product_list__item\">";
+                            echo "<a href=\"cus_product.php?name=$name \" class=\"product_list__item\">";
                             echo "<div class=\"product_list__item_price\">";
-                            echo    "<h2>$$price</h2>";
+                            echo    "<h2 id=\"product_price\">$$price</h2>";
                             echo "</div>";
                             echo "<div class=\"product_list__item_img\">";
-                            echo    "<img src=\"./assets/product_img/$image\" alt=\"Product's image\">";
+                            echo    "<img class=\"product_img\" src=\"./assets/product_img/$image\" alt=\"Product's image\">";
                             echo "</div>";
                             echo "<div class=\"product_list__item_name\">";
                             echo     "<h1>$name</h1>";
@@ -178,7 +196,7 @@
                             echo    "<p>$desc</p>";
                             echo "</div>";
                             echo "<div class=\"product_list__item_buybtn\">";
-                            echo     "<button class=\"form_field__label btn-hover color-9\">";
+                            echo     "<button class=\"add_to_cart\" class=\"form_field__label btn-hover color-9\">";
                             echo         "Add to cart";
                             echo     "</button>";
                             echo "</div>";
@@ -193,8 +211,8 @@
                         // If the data in json file empty, show No product added
                         echo "<span class=\"no_product\"> No product added </span>";
                     };
-                ?>
-
+                ?>         
+                
             </div>
 
         </div>

@@ -72,33 +72,34 @@
         </div>
 
         <div class="cus_cart_container">
-            <h2>Shopping cart</h2>
-            <table border=1px class="cus_cart_list">
-                <thead>
-                    <th>No</th>
-                    <th>Product Image</th>
-                    <th>Name</th>
-                    <th>Price</th>
-                    <th>Quantity</th>
-                    <th>Description</th>
-                    <th>Remove</th>
-                </thead>
+            <h1>Shopping cart</h1>
+            <table border=1px id="cus_cart_list">
+                    <thead>
+                        <th>No</th>
+                        <th>Product Image</th>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Description</th>
+                        <th>Remove</th>
+                    </thead>
 
-                <tbody class="cus_cart_body">
+                    <tbody class="cus_cart_body">  
 
-                </tbody>
+                    </tbody>
             </table>
 
             <div class="cus_cart_btn_container">
                 <button class="checkout_btn">
                     Check out
                 </button>
-
+                
                 <button class="reset_card">
                     Reset
-                </button>
+                </button>        
             </div>
         </div>
+    
     </main>
 
     <footer>

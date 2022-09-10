@@ -319,9 +319,7 @@ footer{
 .nav_footer{
     margin-bottom: 10px;
 }
-main p {
-    font-size: 300px;
-}
+
 
 main {
     min-height: calc(100vh - 66px - 122px);
