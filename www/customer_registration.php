@@ -15,8 +15,8 @@
         $address = isset($_POST["address"]) ? $_POST['address'] : '';
 
         // Check whether username is already registered
-        if (file_exists('./assets/storage/accounts.db')) {
-            $account_file = fopen('./assets/storage/accounts.db', 'r');
+        if (file_exists('../storage/accounts.db')) {
+            $account_file = fopen('../storage/accounts.db', 'r');
             if ($account_file) {
                 // Read the file line by line
                 while (($account = fgets($account_file)) !== false) {
@@ -92,26 +92,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lazada</title>
+    <title>Zalada</title>
+
+    <!-- Font -->
     <style>
     @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Hachi+Maru+Pop&family=Hubballi&family=Inter:wght@300;400;500;600;700;800&family=Kalam:wght@700&family=Montserrat:wght@254&family=Open+Sans:wght@326;379&family=Permanent+Marker&family=Poppins:wght@100&family=Roboto:wght@300;400;700&family=Rubik+Glitch&display=swap');
     </style>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
-        integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="assets/css/base.css">
-    <link rel="stylesheet" href="assets/css/registration_pages.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./assets/css/base.css">
+    <link rel="stylesheet" href="./assets/css/registration_pages.css">
 </head>
 
 <body>
     <header>
-        <a href="./www/index.php" class="back_btn" id="customer_back_btn"><i
+        <a href="./index.php" class="back_btn" id="customer_back_btn"><i
                 class="fa-solid fa-chevron-left"></i>Back</a>
     </header>
     <main>
         <div class="registration customer">
             <div class="registration__left">
-                <img src="assets/img/customer_registration.png" alt="Registration background image">
+                <img src="./assets/img/customer_registration.png" alt="Registration background image">
                 <div class="registration__left_content">
                     <h2>Always welcome</h2>
                     <h3>Nice to meet u!</h3>
@@ -138,8 +139,7 @@
                     enctype="multipart/form-data" class="registration__form" id="form_1">
                     <div class="form_field">
                         <label for="avatar" class="edit_btn form_field__label">
-                            <img src="assets/img/mock_avt2.png" alt="Avatar image" class="avt_block">
-                            <i class="fa-solid fa-camera camera_icon"></i>
+                            <img src="./assets/img/mock_avt2.png" alt="Avatar image" class="avt_block">
                         </label>
                         <input type="file" name="avatar" accept="image/*" id="avatar" onchange="loadFile(event)"
                             style="display: none">
@@ -194,7 +194,7 @@
                     </div>
 
                     <div class="registration__right__more">
-                        <p>Already have an account? <a href="" class="login_link">Login</a> now</p>
+                        <p>Already have an account? <a href="./index.php" class="login_link">Login</a> now</p>
                     </div>
                 </form>
             </div>

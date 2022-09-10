@@ -14,8 +14,8 @@
         $real_name = isset($_POST["name"]) ? $_POST['name'] : '';
         $distribution_hub = isset($_POST["distribution_hub"]) ? $_POST['distribution_hub'] : '';
         // Check whether username is already registered
-        if (file_exists('./assets/storage/accounts.db')) {
-            $account_file = fopen('./assets/storage/accounts.db', 'r');
+        if (file_exists('../storage/accounts.db')) {
+            $account_file = fopen('../storage/accounts.db', 'r');
             if ($account_file) {
                 // Read the file line by line
                 while (($account = fgets($account_file)) !== false) {
@@ -92,26 +92,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lazada</title>
+    <title>Zalada</title>
+
+    <!-- Font -->
     <style>
     @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Hachi+Maru+Pop&family=Hubballi&family=Inter:wght@300;400;500;600;700;800&family=Kalam:wght@700&family=Montserrat:wght@254&family=Open+Sans:wght@326;379&family=Permanent+Marker&family=Poppins:wght@100&family=Roboto:wght@300;400;700&family=Rubik+Glitch&display=swap');
     </style>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
-        integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- CSS -->
     <link rel="stylesheet" href="./assets/css/base.css">
     <link rel="stylesheet" href="./assets/css/registration_pages.css">
 </head>
 
 <body>
     <header>
-        <a href="./www/index.php" class="back_btn" id="shipper_back_btn"><i
+        <a href="./index.php" class="back_btn" id="shipper_back_btn"><i
                 class="fa-solid fa-chevron-left"></i>Back</a>
     </header>
     <main>
         <div class="registration shipper">
             <div class="registration__left">
-                <img src="./assets/img/shipper_registration.png" alt="">
+                <img src="./assets/img/shipper_registration.png" alt="Shipper image">
                 <div class="registration__left_content">
                     <h2>Always welcome</h2>
                     <h3>Nice to meet you!</h3>
@@ -138,12 +139,12 @@
                     enctype="multipart/form-data" class="registration__form" id="form_3">
                     <div class="form_field">
                         <label for="avatar" class="edit_btn form_field__label">
-                            <img src="./assets/img/mock_avt2.png" alt="" class="avt_block">
+                            <img src="./assets/img/mock_avt2.png" alt="User's mock avatar" class="avt_block">
                             <i class="fa-solid fa-camera camera_icon"></i>
                         </label>
                         <input type="file" name="avatar" accept="image/*" id="avatar" onchange="loadFile(event)"
                             style="display: none">
-                        <img src="" alt="" id="output">
+                        <img src="" alt="Shipper's avatar" id="output">
                         <span class="form_field__message"></span>
                     </div>
 
@@ -171,8 +172,8 @@
                         <label for="distribution_hub" class="form_field__label">Distribution hub</label>
                         <select name="distribution_hub" id="distribution_hub">
                             <?php
-                                if(file_exists('./assets/storage/hubs.db')) {
-                                    $hubs_file = fopen('./assets/storage/hubs.db', 'r');
+                                if(file_exists('../storage/hubs.db')) {
+                                    $hubs_file = fopen('../storage/hubs.db', 'r');
                                     echo '<option value="selectcard">--- Please select ---</option>';
                                     while(($hub = fgets($hubs_file)) !== false) {
                                         $hub_details = explode('|', $hub);
@@ -192,7 +193,7 @@
 
                     <div class="registration__right__more">
                         <!-- <a href="">Forgot password?</a> -->
-                        <p>Already have an account? <a href="" class="login_link">Login</a> now</p>
+                        <p>Already have an account? <a href="./index.php" class="login_link">Login</a> now</p>
                     </div>
                 </form>
             </div>

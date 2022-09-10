@@ -20,7 +20,7 @@
         }
         
         $is_written = false;
-        $fp = fopen('./assets/storage/accounts.db', 'a+');
+        $fp = fopen('../storage/accounts.db', 'a+');
         if (fwrite($fp, $text)) {
             $is_written = true;
         };
