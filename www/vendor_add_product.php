@@ -144,6 +144,9 @@
         include_once('./footer.php')
     ?>
 
+    <!-- Drop-down account setting -->
+    <script src="./assets/js/account_setting.js"></script>
+
 
     
     <script src="./assets/js/validator.js"></script>

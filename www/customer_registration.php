@@ -205,7 +205,7 @@
     <!-- JS CODE -->
     <!-- Upload image script -->
     <script src="./assets/js/preview.js"></script>
-
+    
     <!-- Validation Client Side (JS) -->
     <script src="./assets/js/validator.js"></script>
     <script>

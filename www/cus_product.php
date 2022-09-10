@@ -112,8 +112,10 @@
         include_once('./footer.php')
     ?>
 
-    <script>
+    <!-- Drop-down account setting -->
+    <script src="./assets/js/account_setting.js"></script>
 
+    <script>
     // Add product to cart in LOCAL STORAGE
     var cart = []
 

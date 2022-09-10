@@ -134,6 +134,9 @@
         include_once('./footer.php')
     ?>
 
+    <!-- Drop-down account setting -->
+    <script src="./assets/js/account_setting.js"></script>
+
     <script>
     // Open the Accouunt setting subnav bar
     var avatarElement = document.querySelector('.nav_pc_item__avt');

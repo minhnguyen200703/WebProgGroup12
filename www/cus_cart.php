@@ -100,6 +100,9 @@
         include_once('./footer.php')
     ?>
 
+    <!-- Drop-down account setting -->
+    <script src="./assets/js/account_setting.js"></script>
+
     <script>
     // The function to show cart data from LOCAL STORAGE
     showCart()
