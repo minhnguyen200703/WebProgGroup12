@@ -1,20 +1,16 @@
 <?php
+    session_start();
+    ob_start();
+
+    // Check if logged in
+    include_once('check_logged.php');
+    
     // Function to check if name value equal to value from GET from url
     function name_check($arr) { 
         return $arr["name"] == $_GET['name']; 
     };
 
-    session_start();
-    ob_start();
-
-    // Check if logged in
-    
-    if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == false) {
-        header("Location: ./index.php"); 
-        exit();
-    };
-
-        // Take the value out from json file
+    // Take the value out from json file
     $products = json_decode(file_get_contents("../storage/product.json"), true);
     // Slice 1 value from product if the name equal to data in url
     $t_product = array_slice(array_filter($products, "name_check"), 0, 1);
@@ -55,9 +51,6 @@
                 <li class="nav_pc_item">
                     <img src="<?php echo $_SESSION['user']['avatar']?>" alt="User's avatar" class="nav_pc_item__avt">
                     <ul class="account-setting-container hide">
-                        <li>
-                            <h3>Hi <?php echo $_SESSION['user']['real_name'] ?></h3>
-                        </li>
                         <li class="account-setting-item">
                             <a href="my_account.php">My account</a>
                         </li>
@@ -112,30 +105,12 @@
             echo "</div>";
             echo  "</div>";
         ?>
-
     </main>
 
-    <footer>
-        <nav class="nav_footer">
-            <ul class="nav_pc_container">
-                <li class="nav_pc_item">
-                    <a href="./about.html" class="nav_pc_item__link">About</a>
-                </li>
-                <li class="nav_pc_item">
-                    <a href="./privacy_policies.html" class="nav_pc_item__link">Policies</a>
-                </li>
-                <li class="nav_pc_item">
-                    <a href="#" class="nav_pc_item__link">Help</a>
-                </li>
-                <li class="nav_pc_item">
-                    <a href="#" class="nav_pc_item__link">Contact</a>
-                </li>
-            </ul>
-        </nav>
-        <div class="group_name">
-            <p>©2022 Group 7</p>
-        </div>
-    </footer>
+    <!-- Footer section -->
+    <?php 
+        include_once('./footer.php')
+    ?>
 
     <script>
     // Add product to cart in LOCAL STORAGE

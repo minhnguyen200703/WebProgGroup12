@@ -2,88 +2,89 @@
     session_start();
     ob_start();
 
-     // Valide at server side again before saving user input to the text file.
-     include_once('validator.php');
-     $is_duplicate = false;
-     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-         // Get user input via POST request
-         $username = isset($_POST["username"]) ? $_POST['username'] : '';
-         $password = isset($_POST["password"]) ? $_POST['password'] : '';
-         $_SESSION['hashed_password'] = password_hash($password, PASSWORD_DEFAULT);
-         $avatar = basename($_FILES['avatar']['name']);
-         $business_name = isset($_POST["business_name"]) ? $_POST['business_name'] : '';
-         $business_address = isset($_POST["business_address"]) ? $_POST['business_address'] : '';
- 
-         // Check whether username is already registered
-         if (file_exists('../storage/accounts.db')) {
-             $account_file = fopen('../storage/accounts.db', 'r');
-             if ($account_file) {
-                 // Read the file line by line
-                 while (($account = fgets($account_file)) !== false) {
-                     $account_details = explode('|', $account);
-                     if ((trim($username) == trim($account_details[1]))) {
-                         $is_duplicate = true;
-                         break;
-                     }
-                 }
-                 fclose($account_file);
-             }
-         }
- 
-         // Validate username at sever side
-         if (empty($username)) {
-             $usernameErr = "Name is required";
-         } else if (!checkBetweenLength($username, 8, 15))  {
-             $usernameErr = "The length of username must be between 6 and 20characters";
-         } else {
-             $usernameErr = "";
-             $username = test_input($username);
-         }
- 
-         // Validate password at sever side
-         if (empty($password)) {
-             $password_err = "Password is required";
-         }  else if (!checkLowerCase($password))  {
-             $password_err = "At least one lowercase character is required";
-         } else if (!checkUpperCase($password))  {
-             $password_err = "At least one uppercase character is required";
-         } else if (!checkSymbol($password))  {
-             $password_err = "At least one symbol is required";
-         } else if (!checkNumber($password))  {
-             $password_err = "At least one number is required";
-         } else if (!checkBetweenLength($password, 6, 20))  {
-             $password_err = "The length of username must be between 6 and 20 characters";
-         } else {
-             $password_err = "";
-             $password = test_input($password);
-         }
- 
-         // Validate real name of user at sever side
-         if (empty($business_name)) {
-             $business_name_err = "Password is required";
-         } else if (!checkMinLength($business_name, 5)) {
-             $business_name_err = "At least 5 characters is required";
-         } else {
-             $business_name_err = "";
-             $business_name = test_input($business_name);
-         }
- 
-         // Validate user address at sever side
-         if (empty($business_address)) {
-             $business_address_err = "Password is required";
-         } else if (!checkMinLength($business_address, 5)) {
-             $business_address_err = "At least 5 characters is required";
-         } else {
-             $business_address_err = "";
-             $business_address = test_input($business_address);
-         }
-         
-         // If all form fields satisfy the requirements, save the user data to the text file
-         if ($username && $password && $business_name && $business_address && !$is_duplicate) {
-             $user_type = "type2";  //type 1 represents for vendor accounts
-             include_once('save_user_to_txt.php');
-         }
-     }
+    // Valide at server side again before saving user input to the text file.
+    include_once('validator.php');
+    
+    $is_duplicate = false;
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        // Get user input via POST request
+        $username = isset($_POST["username"]) ? $_POST['username'] : '';
+        $password = isset($_POST["password"]) ? $_POST['password'] : '';
+        $_SESSION['hashed_password'] = password_hash($password, PASSWORD_DEFAULT);
+        $avatar = basename($_FILES['avatar']['name']);
+        $business_name = isset($_POST["business_name"]) ? $_POST['business_name'] : '';
+        $business_address = isset($_POST["business_address"]) ? $_POST['business_address'] : '';
+
+        // Check whether username is already registered
+        if (file_exists('../storage/accounts.db')) {
+            $account_file = fopen('../storage/accounts.db', 'r');
+            if ($account_file) {
+                // Read the file line by line
+                while (($account = fgets($account_file)) !== false) {
+                    $account_details = explode('|', $account);
+                    if ((trim($username) == trim($account_details[1]))) {
+                        $is_duplicate = true;
+                        break;
+                    }
+                }
+                fclose($account_file);
+            }
+        }
+
+        // Validate username at sever side
+        if (empty($username)) {
+            $usernameErr = "Name is required";
+        } else if (!checkBetweenLength($username, 8, 15))  {
+            $usernameErr = "The length of username must be between 6 and 20characters";
+        } else {
+            $usernameErr = "";
+            $username = test_input($username);
+        }
+
+        // Validate password at sever side
+        if (empty($password)) {
+            $password_err = "Password is required";
+        }  else if (!checkLowerCase($password))  {
+            $password_err = "At least one lowercase character is required";
+        } else if (!checkUpperCase($password))  {
+            $password_err = "At least one uppercase character is required";
+        } else if (!checkSymbol($password))  {
+            $password_err = "At least one symbol is required";
+        } else if (!checkNumber($password))  {
+            $password_err = "At least one number is required";
+        } else if (!checkBetweenLength($password, 6, 20))  {
+            $password_err = "The length of username must be between 6 and 20 characters";
+        } else {
+            $password_err = "";
+            $password = test_input($password);
+        }
+
+        // Validate real name of user at sever side
+        if (empty($business_name)) {
+            $business_name_err = "Password is required";
+        } else if (!checkMinLength($business_name, 5)) {
+            $business_name_err = "At least 5 characters is required";
+        } else {
+            $business_name_err = "";
+            $business_name = test_input($business_name);
+        }
+
+        // Validate user address at sever side
+        if (empty($business_address)) {
+            $business_address_err = "Password is required";
+        } else if (!checkMinLength($business_address, 5)) {
+            $business_address_err = "At least 5 characters is required";
+        } else {
+            $business_address_err = "";
+            $business_address = test_input($business_address);
+        }
+        
+        // If all form fields satisfy the requirements, save the user data to the text file
+        if ($username && $password && $business_name && $business_address && !$is_duplicate) {
+            $user_type = "type2";  //type 1 represents for vendor accounts
+            include_once('save_user_to_txt.php');
+        }
+    }
 ?>
 
 <!DOCTYPE html>
@@ -135,8 +136,7 @@
             </div>
             <div class="registration__right">
                 <h2>Vendor Registration</h2>
-                <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post"
-                    enctype="multipart/form-data" class="registration__form" id="form_2">
+                <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post" enctype="multipart/form-data" class="registration__form" id="form_2">
                     <div class="form_field">
                         <label for="avatar" class="edit_btn form_field__label">
                             <img src="./assets/img/mock_avt2.png" alt="" class="avt_block">

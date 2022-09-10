@@ -61,9 +61,7 @@ main {
 #product_price{
     color: #000;
 }
-/* #main_header__title{
-    font-size: 30px;
-} */
+
 .filtering_price_data_heading{
     font-size: 15px;
 }
@@ -71,13 +69,7 @@ main {
 #shopping_cart_link{
     font-size: 20px;
 }
-/* .main_header_navigator{
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    justify-content: space-between;
-    align-items: center;
-} */
+
 /* Search */
 .search_container{
     margin-top: 16px;

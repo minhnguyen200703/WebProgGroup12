@@ -1,16 +1,10 @@
 <?php
   session_start();
 
-//    Check if logged in
+    // Check if logged in
+    include_once('check_logged.php');
 
-    if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true) {
-    } else {
-        header("Location: ./index.php"); 
-        exit();
-    }
-
-//   Write down order
-
+    // Write down order
     if(isset($_GET['cart'])){
         // Get value from url by $_GET method
         $cart = $_GET['cart'];
@@ -70,9 +64,6 @@
                 <li class="nav_pc_item">
                     <img src="<?php echo $_SESSION['user']['avatar']?>" alt="User's avatar" class="nav_pc_item__avt">
                     <ul class="account-setting-container hide">
-                        <li>
-                            <h3>Hi <?php echo $_SESSION['user']['real_name'] ?></h3>
-                        </li>
                         <li class="account-setting-item">
                             <a href="./my_account.php">My account</a>
                         </li>
@@ -92,9 +83,6 @@
 
     <!-- Main section -->
     <main>
-
-
-
         <!-- Main header -->
         <div class="main_header">
             <div class="main_header_navigator">
@@ -106,7 +94,7 @@
 
             <!-- Search and filtering -->
             <div class="search_and_filtering">
-                <form class="search_and_filtering_form" method="get" action="cus_main.php">
+                <form class="search_and_filtering_form" method="get" action="cus_main.php" enctype="multipart/form-data">
                     <!-- <div class="search_and_filtering_input"> -->
                     <input class="filtering_price_data" type="number" name="min_price" placeholder="Min Price">
                     <!-- </div> -->
@@ -215,33 +203,12 @@
             </div>
 
         </div>
-
     </main>
 
     <!-- Footer section -->
-
-    <footer>
-        <nav class="nav_footer">
-            <ul class="nav_pc_container">
-                <li class="nav_pc_item">
-                    <a href="./about.html" class="nav_pc_item__link">About</a>
-                </li>
-                <li class="nav_pc_item">
-                    <a href="./privacy_policies.html" class="nav_pc_item__link">Policies</a>
-                </li>
-                <li class="nav_pc_item">
-                    <a href="#" class="nav_pc_item__link">Help</a>
-                </li>
-                <li class="nav_pc_item">
-                    <a href="#" class="nav_pc_item__link">Contact</a>
-                </li>
-            </ul>
-        </nav>
-        <div class="group_name">
-            <p>©2022 Group 7</p>
-        </div>
-    </footer>
-
+    <?php 
+        include_once('./footer.php')
+    ?>
 
     <script>
     // Open the Accouunt setting subnav bar

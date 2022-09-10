@@ -2,23 +2,19 @@
     session_start();
     ob_start();
 
-// Check if logged in
-    if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == false) {
-        header("Location: ./index.php"); 
-        exit();
-    };
+    // Check if logged in
+    include_once('check_logged.php');
 
     $hub_user = $_SESSION['user']['distribution_hub'];
-
     
     if(file_exists('../storage/hubs.db')) {
         $hubs_file = fopen('../storage/hubs.db', 'r');
         while(($hub = fgets($hubs_file)) !== false) {
             $hub_details = explode('|', $hub);
-           if ($hub_user == $hub_details[1]) {
-            $hub_id =  $hub_details[0];
-            break;
-        }
+            if ($hub_user == $hub_details[1]) {
+                $hub_id =  $hub_details[0];
+                break;
+            }
         }
     }
 
@@ -59,9 +55,6 @@
                 <li class="nav_pc_item">
                     <img src="<?php echo $_SESSION['user']['avatar']?>" alt="User's avatar" class="nav_pc_item__avt">
                     <ul class="account-setting-container hide">
-                        <li>
-                            <h3>Hi <?php echo $_SESSION['user']['real_name'] ?></h3>
-                        </li>
                         <li class="account-setting-item">
                             <a href="./my_account.php">My account</a>
                         </li>
@@ -132,31 +125,12 @@
                 </tbody>
             </table>
         </div>
-
     </main>
 
-
-    <footer>
-        <nav class="nav_footer">
-            <ul class="nav_pc_container">
-                <li class="nav_pc_item">
-                    <a href="./about.html" class="nav_pc_item__link">About</a>
-                </li>
-                <li class="nav_pc_item">
-                    <a href="./privacy_policies.html" class="nav_pc_item__link">Policies</a>
-                </li>
-                <li class="nav_pc_item">
-                    <a href="#" class="nav_pc_item__link">Help</a>
-                </li>
-                <li class="nav_pc_item">
-                    <a href="#" class="nav_pc_item__link">Contact</a>
-                </li>
-            </ul>
-        </nav>
-        <div class="group_name">
-            <p>©2022 Group 7</p>
-        </div>
-    </footer>
+    <!-- Footer section -->
+    <?php 
+        include_once('./footer.php')
+    ?>
 
     <script>
     // Open the Accouunt setting subnav bar

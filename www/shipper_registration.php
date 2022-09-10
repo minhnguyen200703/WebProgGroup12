@@ -4,6 +4,7 @@
 
     // Valide at server side again before saving user input to the text file.
     include_once('validator.php');
+    
     $is_duplicate = false;
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Get user input via POST request
@@ -135,8 +136,7 @@
             </div>
             <div class="registration__right">
                 <h2>Shipper Registration</h2>
-                <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post"
-                    enctype="multipart/form-data" class="registration__form" id="form_3">
+                <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post" enctype="multipart/form-data" class="registration__form" id="form_3">
                     <div class="form_field">
                         <label for="avatar" class="edit_btn form_field__label">
                             <img src="./assets/img/mock_avt2.png" alt="User's mock avatar" class="avt_block">

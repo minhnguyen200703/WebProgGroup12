@@ -1,7 +1,7 @@
 <?php 
     if(isset($_POST['submit_btn']) && $_POST['submit_btn']) {
         
-        // Upload avatar to directory "uploads"
+        // Upload avatar to directory "avartars"
         $target_dir = "./assets/avatars/";
         $target_file = $target_dir . $avatar;
         $is_file_uploaded = move_uploaded_file($_FILES["avatar"]["tmp_name"], $target_file);

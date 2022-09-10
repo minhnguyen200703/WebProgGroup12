@@ -82,12 +82,6 @@
         <nav>
             <ul class="nav_pc_container">
                 <li class="nav_pc_item">
-                    <a href="#" class="nav_pc_item__link">About</a>
-                </li>
-                <li class="nav_pc_item">
-                    <a href="#" class="nav_pc_item__link">Policies</a>
-                </li>
-                <li class="nav_pc_item">
                     <img src="<?php echo $_SESSION['user']['avatar']?>" alt="User's avatar" class="nav_pc_item__avt">
                     <ul class="account-setting-container hide">
                         <li class="account-setting-item">
@@ -166,7 +160,7 @@
                         </button>
                     </div>
 
-                    <form action="" method="post" enctype="multipart/form-data" class="change_profile_form">
+                    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post" enctype="multipart/form-data" class="change_profile_form">
                         <div class="form_field avatar">
                             <label for="new_avatar" class="edit_btn form_field__label">
                                 <img src="./assets/img/mock_avt2.png" alt="User's mock avatar" class="avt_block">
@@ -194,27 +188,10 @@
         </section>
     </main>
 
-    <footer>
-        <nav class="nav_footer">
-            <ul class="nav_pc_container">
-                <li class="nav_pc_item">
-                    <a href="./about.html" class="nav_pc_item__link">About</a>
-                </li>
-                <li class="nav_pc_item">
-                    <a href="./privacy_policies.html" class="nav_pc_item__link">Policies</a>
-                </li>
-                <li class="nav_pc_item">
-                    <a href="#" class="nav_pc_item__link">Help</a>
-                </li>
-                <li class="nav_pc_item">
-                    <a href="#" class="nav_pc_item__link">Contact</a>
-                </li>
-            </ul>
-        </nav>
-        <div class="group_name">
-            <p>©2022 Group 7</p>
-        </div>
-    </footer>
+    <!-- Footer section -->
+    <?php 
+        include_once('./footer.php')
+    ?>
 
     <!-- JS CODE -->
     <!-- Upload image script -->

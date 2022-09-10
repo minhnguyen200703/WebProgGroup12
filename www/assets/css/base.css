@@ -131,9 +131,9 @@ nav {
     top: 60px;
     right: 21px;
     box-shadow: rgb(99 99 99 / 20%) 0px 2px 8px 0px;
-    padding: 5px;
+    padding: 16px;
     border-radius: 4px;
-    width: 100%;
+    width: 150%;
     transition: 0.5s;
     text-align: center;
 }
@@ -171,6 +171,35 @@ nav {
     opacity: 0.7;
 }
 
+main {
+    height: calc(100vh - 66px - 107px);
+    overflow: hidden;
+    z-index: -1;
+}
+
+/* Footer section */
+footer {
+    text-align: center;
+}
+
+.footer_container {
+}
+
+.footer_item {
+    padding: 12px 20px;
+    display: inline-block;
+}
+
+.footer_item__link {
+    font-size: 1.8rem;
+    color: var(--dark_blue_color);
+    font-weight: 500;
+}
+
+.copyright {
+    font-size: 1.4rem;
+    font-weight: 500;
+}
 
 /* Buttons  */
 .btn-s-size {
@@ -334,4 +363,4 @@ input[type="password"] {
     width: 3.125em;
     height: 3.125em;
     border-radius: 50%;
-  }
+}

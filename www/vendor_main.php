@@ -3,12 +3,7 @@
     ob_start();
 
     // Check if logged in
-    
-    if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == false) {
-        header("Location: ./index.php"); 
-        exit();
-    };
-
+    include_once('check_logged.php');
 ?>
 
 <!DOCTYPE html>
@@ -49,9 +44,6 @@
                 <li class="nav_pc_item">
                     <img src="<?php echo $_SESSION['user']['avatar']?>" alt="User's avatar" class="nav_pc_item__avt">
                     <ul class="account-setting-container hide">
-                        <li>
-                            <h3>Hi <?php echo $_SESSION['user']['business_name'] ?></h3>
-                        </li>
                         <li class="account-setting-item">
                             <a href="./my_account.php">My account</a>
                         </li>
@@ -84,30 +76,12 @@
                 <a href="vendor_product.php"> View product</a>
             </button>
         </div>
-
     </main>
 
-    <footer>
-        <nav class="nav_footer">
-            <ul class="nav_pc_container">
-                <li class="nav_pc_item">
-                    <a href="./about.html" class="nav_pc_item__link">About</a>
-                </li>
-                <li class="nav_pc_item">
-                    <a href="./privacy_policies.html" class="nav_pc_item__link">Policies</a>
-                </li>
-                <li class="nav_pc_item">
-                    <a href="#" class="nav_pc_item__link">Help</a>
-                </li>
-                <li class="nav_pc_item">
-                    <a href="#" class="nav_pc_item__link">Contact</a>
-                </li>
-            </ul>
-        </nav>
-        <div class="group_name">
-            <p>©2022 Group 7</p>
-        </div>
-    </footer>
+    <!-- Footer section -->
+    <?php 
+        include_once('./footer.php')
+    ?>
 
     <script>
     // Open the Accouunt setting subnav bar
